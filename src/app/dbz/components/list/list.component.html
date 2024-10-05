@@ -1,0 +1,23 @@
+<ul class="list-group">
+  <li
+    *ngFor="
+      let character of characterList;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+    "
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-success': character.power>9000,
+      'list-group-item-secondary': character.power<1000,
+      'item-intermedio': character.name === 'Vegueta'
+    }"
+  >
+    <span class="text-primary">{{ i + 1 }}. </span>
+    <span>{{ character.name }} - </span>
+    <strong>Poder: </strong>
+    <span>{{ character.power }} Es par?: {{ isOdd }}</span>
+  </li>
+</ul>
